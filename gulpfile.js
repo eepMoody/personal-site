@@ -7,6 +7,18 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 
+var jade = require('gulp-jade');
+ 
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+ 
+  gulp.src('./lib/*.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest('./dist/'))
+});
+
 // Set the banner content
 var banner = ['/*!\n',
     ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -87,6 +99,7 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
+    gulp.watch('**/*.png', browserSync.reload);
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });

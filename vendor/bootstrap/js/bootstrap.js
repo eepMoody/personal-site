@@ -982,6 +982,12 @@ if (typeof jQuery === 'undefined') {
     this.resize()
 
     this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+    
+    this.$element.keyup(function(e) {
+      if (e.keyCode == 27) { // escape key maps to keycode `27`
+          $.proxy(this.hide, this);
+      }
+    });
 
     this.$dialog.on('mousedown.dismiss.bs.modal', function () {
       that.$element.one('mouseup.dismiss.bs.modal', function (e) {
