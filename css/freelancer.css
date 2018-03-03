@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
@@ -80,7 +80,7 @@ header:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/space@2x.png');
+  background-image: url('../img/space@2x.jpg');
   background-size: cover;
   transition: all 500ms;
 }
